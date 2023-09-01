@@ -23,14 +23,10 @@ const routes = require('./routes');
 // trabalhar com caminhos
 const path = require('path');
 
-// securança
-const helmet = require('helmet');
-
 // csrf - token para a segurança da aplicação do metodo POST.
 const csrf = require('csurf');
 // middlewares
 const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware');
-app.use(helmet());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
